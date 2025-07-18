@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import '../Styles/EmployeeDetails.css';
+import FrameIcon from '../assets/images/Frame 25066.svg';
 
 export default function EmployeeDetails({ employee }) {
   const params = useParams();
@@ -70,7 +71,7 @@ export default function EmployeeDetails({ employee }) {
                       <td>{entry.actualStation}</td>
                       <td>{entry.plannedStation}</td>
                       <td>{entry.shift}</td>
-                      <td><img src='/src/assets/images/Frame 25066.svg' alt="4M-MAN" style={{ height: '20px' }} /></td>
+                      <td><img src={FrameIcon} alt="4M-MAN" style={{ height: '20px' }} /></td>
                     </tr>
                   ))}
                 </tbody>
