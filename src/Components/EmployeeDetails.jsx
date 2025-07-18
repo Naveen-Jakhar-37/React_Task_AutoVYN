@@ -7,7 +7,6 @@ export default function EmployeeDetails({ employee }) {
   const params = useParams();
   const location = useLocation();
 
-  // This correctly and stably builds the base path for the tabs.
   const view = location.pathname.startsWith('/stations') ? 'stations' : 'operators';
   const basePath = `/${view}/${params.employeeId}`;
 
@@ -42,7 +41,6 @@ export default function EmployeeDetails({ employee }) {
       </div>
 
       <div className="tabs" id="tabs">
-        {/* THE FIX: The `to` prop uses the stable, absolute `basePath` */}
         <NavLink to={`${basePath}/deployment`} className={({ isActive }) => `nav-tab-2 ${isActive ? 'active' : ''}`}>
           DEPLOYMENT
         </NavLink>

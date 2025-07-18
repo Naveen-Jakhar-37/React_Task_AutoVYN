@@ -27,7 +27,6 @@ export default function EmployeeList({ employees, showActive, searchTerm, select
         const borderColor = daysLeft <= 30 ? '#D83B01' : '#58A55C';
 
         return (
-          // Using the exact class names from your original project
           <button
             key={emp.id}
             className={`buttons${isSelected ? ' active selected' : ''}`}
