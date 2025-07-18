@@ -1,59 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Header from "./Components/Header";
-import Navbar from "./Components/Navbar";
-import Dashboard from "./Components/Dashboard";
-import View from "./Components/View";
-import EmployeeList from "./Components/EmployeeList";
-import EmployeeDetails from "./Components/EmployeeDetails";
-import Employees from './assets/images/Employees';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Header from './Components/Header';
+import Navbar from './Components/Navbar';
+import Dashboard from './Components/Dashboard';
+import MainLayout from './Components/MainLayout'; // We will create this new component
 import './index.css';
 
-// Sample data (you can import this from a JSON or fetch it)
-// const EMPLOYEES = [
-//   {
-//     name: "Ujjwal Sharma",
-//     id: "660638 | A0",
-//     image: "1.png",
-//     dob: "12/11/2000",
-//     joiningDate: "10/04/2023",
-//     relievingDate: "27/07/2025",
-//     active: true,
-//     // any other fields like deployment history…
-//   },
-//   {
-//     name: "Raj Kumar",
-//     id: "660669 | TW",
-//     image: "2.png",
-//     dob: "05/08/1998",
-//     joiningDate: "15/02/2022",
-//     relievingDate: "15/08/2025",
-//     active: false,
-//   },
-//   // …more…
-// ];
-
-const App = () => {
-  const [viewMode, setViewMode] = useState("operators");
-  // const [employees] = useState(Employees);
-  const [selected, setSelected] = useState(null);
-  const [employees, setEmployees]     = useState(Employees);
-  const [showActive, setShowActive] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    const filtered = Employees
-      .filter(emp => emp.active === !showActive)
-      .filter(emp => {
-        const term = searchTerm.trim().toLowerCase();
-        return (
-          !term ||
-          emp.userName.toLowerCase().includes(term) ||
-          emp.id.toLowerCase().includes(term)
-        );
-      });
-
-    setSelected(filtered[0] || null);
-  }, [showActive, searchTerm]);
+function App() {
   return (
     <>
       <Header />
@@ -61,31 +14,19 @@ const App = () => {
       <div className="page-body">
         <Dashboard />
         <Navbar />
-        <div className="page-content">
-          <View
-            viewMode={viewMode}
-            setViewMode={setViewMode}
-            showActive={showActive}
-            setShowActive={setShowActive}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            users={Employees}
-          />
-          <div className="container">
-           <EmployeeList
-              employees={employees}
-              viewMode={viewMode}
-              showActive={showActive}
-              searchTerm={searchTerm}
-              selected={selected}
-              onSelect={setSelected}
-            />
-            <EmployeeDetails employee={selected} />
-          </div>
-        </div>
+        <Routes>
+          {/* Default route redirects to the main layout for operators */}
+          <Route path="/" element={<Navigate to="/operators" replace />} />
+
+          {/* All main application logic now lives inside the MainLayout component */}
+          <Route path="/operators/*" element={<MainLayout view="operators" />} />
+          <Route path="/stations/*" element={<MainLayout view="stations" />} />
+
+          {/* You can add other top-level routes here if needed */}
+        </Routes>
       </div>
     </>
   );
-};
+}
 
 export default App;
