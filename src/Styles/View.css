@@ -1,0 +1,576 @@
+.view {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.button-container {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.views {
+    padding-right: 10px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+
+.button-container button {
+    padding: 7px 30px 7px 30px;
+    border: none;
+
+
+
+}
+
+.btn.left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn.right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn.active {
+    background-color: blue;
+    color: white;
+}
+
+.status-toggle {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.status-label {
+    color: #666;
+    font-size: 14px;
+    transition: color 0.2s, font-weight 0.2s;
+}
+
+.status-label.active {
+    font-weight: bold;
+}
+
+.status-label.left {
+    margin-right: 4px;
+}
+
+.status-label.right {
+    margin-left: 4px;
+}
+
+.switch {
+    position: relative;
+    width: 28px;
+    height: 7px;
+    background-color: #ccc;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: background-color 0.3s;
+    margin: 0 4px;
+}
+
+.knob {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    width: 16px;
+    height: 16px;
+    background-color: #222;
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+
+.status-toggle.on .switch {
+    background-color: #007BFF;
+}
+
+.status-toggle.on .knob {
+    left: 18px;
+}
+
+.search {
+    gap: 15px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    width: 100%;
+    border-radius: 5px;
+    /* border-color: #f4f5f8; */
+    border: 1px solid lightgray;
+    padding: 12px 12px 12px 12px;
+    box-sizing: border-box;
+}
+
+.search-box span {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) and (min-width: 541px) {
+    
+    .view {
+        padding: 0px 10px 0px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .button-container {
+        margin-top: 10px;
+        /* display: flex; */
+        align-items: center;
+        position: relative;
+    }
+
+    .views {
+        padding-right: 5px;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+
+    .button-container button {
+        padding: 5px 10px 5px 10px;
+        border: none;
+
+    }
+
+    .button-container button div {
+        font: 10px;
+    }
+
+    .btn.left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        cursor: pointer;
+        /* display: flex; */
+        align-items: center;
+    }
+
+    .btn.right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        /* display: flex; */
+        align-items: center;
+    }
+
+    .btn.active {
+        background-color: blue;
+        color: white;
+    }
+
+    .status-toggle {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .status-label {
+        color: #666;
+        font-size: 10px;
+        transition: color 0.2s, font-weight 0.2s;
+    }
+
+    .status-label.active {
+        font-weight: bold;
+    }
+
+    .status-label.left {
+        margin-right: 4px;
+    }
+
+    .status-label.right {
+        margin-left: 4px;
+    }
+
+    .switch {
+        position: relative;
+        width: 28px;
+        height: 7px;
+        background-color: #ccc;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: background-color 0.3s;
+        margin: 0 4px;
+    }
+
+    .knob {
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        width: 16px;
+        height: 16px;
+        background-color: #222;
+        border-radius: 50%;
+        transition: left 0.3s;
+    }
+
+    .status-toggle.on .switch {
+        background-color: #007BFF;
+    }
+
+    .status-toggle.on .knob {
+        left: 18px;
+    }
+
+    .search {
+        gap: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        position: relative;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .search-box input {
+        width: 100%;
+        border-radius: 5px;
+        /* border-color: #f4f5f8; */
+        border: 1px solid lightgray;
+        padding: 12px 12px 12px 12px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+    }
+
+    .search-box span {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        height: 7px;
+        width: 7px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 540px) and (min-width: 361px) {
+     .view {
+        padding: 0px 10px 0px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .button-container {
+        margin-top: 10px;
+        /* display: flex; */
+        align-items: center;
+        position: relative;
+    }
+
+    .views {
+        padding-right: 5px;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+    .button-container button {
+        padding: 5px 10px 5px 10px;
+        border: none;
+
+    }
+
+    .button-container button div {
+        font: 10px;
+    }
+
+    .btn.left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        cursor: pointer;
+        /* display: flex; */
+        align-items: center;
+    }
+
+    .btn.right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        /* display: flex; */
+        align-items: center;
+    }
+
+    .btn.active {
+        background-color: blue;
+        color: white;
+    }
+
+    .status-toggle {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .status-label {
+        color: #666;
+        font-size: 10px;
+        transition: color 0.2s, font-weight 0.2s;
+    }
+
+    .status-label.active {
+        font-weight: bold;
+    }
+
+    .status-label.left {
+        margin-right: 4px;
+    }
+
+    .status-label.right {
+        margin-left: 4px;
+    }
+
+    .switch {
+        position: relative;
+        width: 28px;
+        height: 7px;
+        background-color: #ccc;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: background-color 0.3s;
+        margin: 0 4px;
+    }
+
+    .knob {
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        width: 16px;
+        height: 16px;
+        background-color: #222;
+        border-radius: 50%;
+        transition: left 0.3s;
+    }
+
+    .status-toggle.on .switch {
+        background-color: #007BFF;
+    }
+
+    .status-toggle.on .knob {
+        left: 18px;
+    }
+
+    .search {
+        gap: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        position: relative;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .search-box input {
+        width: 100%;
+        border-radius: 5px;
+        /* border-color: #f4f5f8; */
+        border: 1px solid lightgray;
+        padding: 12px 12px 12px 12px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+    }
+
+    .search-box span {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        height: 7px;
+        width: 7px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .view {
+        padding: 0px 10px 0px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .button-container {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .views {
+        padding-right: 5px;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+
+    .button-container button {
+        padding: 7px 20px 7px 20px;
+        border: none;
+
+    }
+
+    .button-container button div {
+        font: 10px;
+    }
+
+    .btn.left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn.right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn.active {
+        background-color: blue;
+        color: white;
+    }
+
+    .status-toggle {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .status-label {
+        color: #666;
+        font-size: 10px;
+        transition: color 0.2s, font-weight 0.2s;
+    }
+
+    .status-label.active {
+        font-weight: bold;
+    }
+
+    .status-label.left {
+        margin-right: 4px;
+    }
+
+    .status-label.right {
+        margin-left: 4px;
+    }
+
+    .switch {
+        position: relative;
+        width: 28px;
+        height: 7px;
+        background-color: #ccc;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: background-color 0.3s;
+        margin: 0 4px;
+    }
+
+    .knob {
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        width: 16px;
+        height: 16px;
+        background-color: #222;
+        border-radius: 50%;
+        transition: left 0.3s;
+    }
+
+    .status-toggle.on .switch {
+        background-color: #007BFF;
+    }
+
+    .status-toggle.on .knob {
+        left: 18px;
+    }
+
+    .search {
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        position: relative;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .search-box input {
+        width: 100%;
+        border-radius: 5px;
+        /* border-color: #f4f5f8; */
+        border: 1px solid lightgray;
+        padding: 12px 12px 12px 12px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+    }
+
+    .search-box span {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        height: 13px;
+        width: 13px;
+        display: flex;
+        align-items: center;
+    }
+}
